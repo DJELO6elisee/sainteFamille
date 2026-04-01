@@ -1,0 +1,61 @@
+# =============================================================================
+# CORS pour l'API (saintefamilleexcellence.ci)
+# Frontend : https://saintefamilleexcellence.ci | API : saintefamilleexcellence.ci
+# =============================================================================
+# À placer sur le serveur qui héberge l'API (saintefamilleexcellence.ci).
+#
+# Si vous voyez "403 Forbidden" sur OPTIONS /api/auth/login (preflight CORS) :
+#   → Le proxy (Nginx / Apache / pare-feu) bloque OPTIONS avant Node.
+#   → Il faut autoriser la méthode OPTIONS vers /api/ et faire proxy_pass vers Node.
+#   → Ne pas bloquer OPTIONS (pas de "deny" ou règle qui renvoie 403 pour OPTIONS).
+#
+# Les requêtes OPTIONS (preflight) et l'en-tête Origin doivent atteindre Node.
+# =============================================================================
+
+# Option A — Laisser Node gérer tout le CORS (recommandé) : proxy uniquement
+# Pas de "if (OPTIONS) return 204" ici ; Node renvoie les en-têtes CORS.
+
+server {
+    listen 443 ssl;
+    server_name saintefamilleexcellence.ci;
+
+    # ... vos directives ssl, root, etc. ...
+
+    location /api/ {
+        proxy_pass http://127.0.0.1:5000;   # ou votre upstream Node
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        # Indispensable pour CORS : transmettre Origin à Node (preflight + requêtes)
+        proxy_set_header Origin $http_origin;
+    }
+}
+
+# =============================================================================
+# Option B — Nginx gère le preflight OPTIONS (si Node ne reçoit pas OPTIONS)
+# Décommenter le bloc map et la section "if (OPTIONS)" ci-dessous.
+# =============================================================================
+#
+# map $http_origin $cors_origin {
+#     default "";
+#     "~^https?://(www\.)?saintefamilleexcellence\.ci$" $http_origin;
+#     "~^https?://(www\.)?saintefamilleexcellence\.ci$" $http_origin;
+#     "~^http://localhost:3000$" $http_origin;
+#     "~^http://127\.0\.0\.1:3000$" $http_origin;
+# }
+#
+# Dans location /api/ : avant proxy_pass, ajouter :
+#
+#     if ($request_method = 'OPTIONS') {
+#         add_header 'Access-Control-Allow-Origin' $cors_origin always;
+#         add_header 'Access-Control-Allow-Credentials' 'true' always;
+#         add_header 'Access-Control-Allow-Methods' 'GET, POST, PUT, DELETE, PATCH, OPTIONS' always;
+#         add_header 'Access-Control-Allow-Headers' 'Content-Type, Authorization, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers' always;
+#         add_header 'Access-Control-Max-Age' 86400 always;
+#         add_header 'Content-Length' 0;
+#         return 204;
+#     }
+#     add_header 'Access-Control-Allow-Origin' $cors_origin always;
+#     add_header 'Access-Control-Allow-Credentials' 'true' always;

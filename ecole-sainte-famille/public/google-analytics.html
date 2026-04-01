@@ -1,0 +1,80 @@
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'GA_MEASUREMENT_ID', {
+    page_title: 'GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE - Crèche et Garderie Abidjan',
+    page_location: 'https://saintefamilleexcellence.ci',
+    custom_map: {
+      'custom_parameter_1': 'activity_type',
+      'custom_parameter_2': 'page_section'
+    }
+  });
+
+  // Événements personnalisés pour le suivi des interactions
+  gtag('event', 'page_view', {
+    page_title: 'GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE - Accueil',
+    page_location: 'https://saintefamilleexcellence.ci',
+    custom_parameter_1: 'homepage'
+  });
+
+  // Suivi des clics sur les activités
+  document.addEventListener('DOMContentLoaded', function() {
+    const activityLinks = document.querySelectorAll('a[href*="jeux-educatifs"], a[href*="vie-academique"], a[href*="activites-extrascolaires"]');
+    activityLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        gtag('event', 'click', {
+          event_category: 'Activities',
+          event_label: this.href,
+          custom_parameter_1: 'activity_click'
+        });
+      });
+    });
+
+    // Suivi des clics sur le formulaire de pré-inscription
+    const registrationButtons = document.querySelectorAll('button[onclick*="registration"], a[href*="registration"]');
+    registrationButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        gtag('event', 'click', {
+          event_category: 'Registration',
+          event_label: 'Pre-inscription',
+          custom_parameter_1: 'registration_click'
+        });
+      });
+    });
+
+    // Suivi des appels téléphoniques
+    const phoneLinks = document.querySelectorAll('a[href^="tel:"]');
+    phoneLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        gtag('event', 'click', {
+          event_category: 'Contact',
+          event_label: 'Phone Call',
+          custom_parameter_1: 'phone_click'
+        });
+      });
+    });
+  });
+</script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager -->
+
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" />
+
+<!-- Bing Webmaster Tools -->
+<meta name="msvalidate.01" content="YOUR_BING_VERIFICATION_CODE" />
+
+<!-- Yandex Webmaster -->
+<meta name="yandex-verification" content="YOUR_YANDEX_VERIFICATION_CODE" />

@@ -1,0 +1,38 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: http://localhost:3000/sitemap.xml
+
+# Crawl-delay pour éviter de surcharger le serveur
+Crawl-delay: 1
+
+# Pages principales à indexer en priorité
+Allow: /
+Allow: /presentation
+Allow: /scolarite
+Allow: /scolarite-maternel
+Allow: /activites
+Allow: /blog
+
+# Pages administratives à exclure
+Disallow: /secretary-login
+Disallow: /secretary/
+Disallow: /admin/
+Disallow: /login
+Disallow: /api/
+Disallow: /teacher/
+Disallow: /student/
+Disallow: /parent/
+
+# Fichiers à exclure
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /manifest.json
+Disallow: /service-worker.js
+
+# Images et ressources statiques
+Allow: /img/
+Allow: /icons/
+Allow: /uploads/

@@ -1,0 +1,40 @@
+# Configuration spéciale pour Safari
+# Pour éviter les erreurs WebKitBlobResource
+
+# Headers de sécurité pour Safari
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options nosniff
+    Header always set X-Frame-Options DENY
+    Header always set X-XSS-Protection "1; mode=block"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Headers spécifiques à Safari
+    Header always set Cache-Control "no-cache, no-store, must-revalidate"
+    Header always set Pragma "no-cache"
+    Header always set Expires "0"
+</IfModule>
+
+# Configuration pour les Service Workers
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirection pour Safari
+    RewriteCond %{HTTP_USER_AGENT} Safari [NC]
+    RewriteCond %{HTTP_USER_AGENT} !Chrome [NC]
+    RewriteRule ^sw.js$ /sw-safari.js [L]
+    
+    # Gestion des routes React
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} !^/api/
+    RewriteRule . /index.html [L]
+</IfModule>
+
+# Désactiver le cache pour les fichiers dynamiques
+<FilesMatch "\.(js|css|json)$">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-cache, no-store, must-revalidate"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </IfModule>
+</FilesMatch>

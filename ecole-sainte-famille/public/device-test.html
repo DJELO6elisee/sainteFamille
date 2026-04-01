@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Compatibilité Multi-Appareils - GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1780c2 0%, #0d5a8a 100%);
+            min-height: 100vh;
+            color: white;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .device-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .device-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .device-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .icon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .icon-item {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-item:hover {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .icon-item img {
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .icon-info {
+            font-size: 0.8rem;
+            opacity: 0.9;
+        }
+        
+        .status {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .compatibility-list {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .compatibility-list h3 {
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        
+        .compatibility-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .compatibility-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .compatibility-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .compatibility-list li::before {
+            content: "✅ ";
+            margin-right: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .device-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>📱 Test Compatibilité Multi-Appareils</h1>
+        <h2 style="text-align: center; margin-bottom: 30px; opacity: 0.9;">GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE</h2>
+
+        <div class="status">
+            <h3>🎯 État de la Compatibilité</h3>
+            <p>Vérifiez que toutes les icônes s'affichent correctement ci-dessous pour chaque plateforme :</p>
+        </div>
+
+        <div class="device-grid">
+            <!-- iPhone/iOS -->
+            <div class="device-section">
+                <div class="device-title">🍎 iPhone/iOS</div>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <img src="/icons/icon-152x152.webp" alt="iPad" width="60" height="60">
+                        <div class="icon-info">152x152<br>iPad</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-180x180.webp" alt="iPhone" width="60" height="60">
+                        <div class="icon-info">180x180<br>iPhone</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-192x192.webp" alt="Principal" width="60" height="60">
+                        <div class="icon-info">192x192<br>Principal</div>
+                    </div>
+                </div>
+                <div class="compatibility-list">
+                    <h3>Appareils Supportés</h3>
+                    <ul>
+                        <li>iPhone SE (375x667)</li>
+                        <li>iPhone 12/13/14 (390x844)</li>
+                        <li>iPhone 12/13/14 Pro Max (428x926)</li>
+                        <li>iPhone 15 Pro Max (430x932)</li>
+                        <li>iPad (768x1024)</li>
+                        <li>iPad Pro (1024x1366)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Android -->
+            <div class="device-section">
+                <div class="device-title">🤖 Android</div>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <img src="/icons/icon-48x48.webp" alt="mdpi" width="40" height="40">
+                        <div class="icon-info">48x48<br>mdpi</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-72x72.webp" alt="hdpi" width="50" height="50">
+                        <div class="icon-info">72x72<br>hdpi</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-96x96.webp" alt="xhdpi" width="60" height="60">
+                        <div class="icon-info">96x96<br>xhdpi</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-144x144.webp" alt="xxhdpi" width="60" height="60">
+                        <div class="icon-info">144x144<br>xxhdpi</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-192x192.webp" alt="xxxhdpi" width="60" height="60">
+                        <div class="icon-info">192x192<br>xxxhdpi</div>
+                    </div>
+                </div>
+                <div class="compatibility-list">
+                    <h3>Densités Supportées</h3>
+                    <ul>
+                        <li>mdpi (1x) - Téléphones basiques</li>
+                        <li>hdpi (1.5x) - Téléphones standards</li>
+                        <li>xhdpi (2x) - Téléphones haute densité</li>
+                        <li>xxhdpi (3x) - Téléphones très haute densité</li>
+                        <li>xxxhdpi (4x) - Téléphones ultra haute densité</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Desktop -->
+            <div class="device-section">
+                <div class="device-title">💻 Desktop</div>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <img src="/icons/icon-16x16.webp" alt="Favicon" width="30" height="30">
+                        <div class="icon-info">16x16<br>Favicon</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-32x32.webp" alt="Favicon" width="40" height="40">
+                        <div class="icon-info">32x32<br>Favicon</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-144x144.webp" alt="Windows" width="60" height="60">
+                        <div class="icon-info">144x144<br>Windows</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-192x192.webp" alt="macOS" width="60" height="60">
+                        <div class="icon-info">192x192<br>macOS</div>
+                    </div>
+                </div>
+                <div class="compatibility-list">
+                    <h3>Plateformes Supportées</h3>
+                    <ul>
+                        <li>Windows 10/11</li>
+                        <li>macOS 10.14+</li>
+                        <li>Linux (toutes distributions)</li>
+                        <li>Chrome/Edge/Firefox/Safari</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Notifications -->
+            <div class="device-section">
+                <div class="device-title">🔔 Notifications</div>
+                <div class="icon-grid">
+                    <div class="icon-item">
+                        <img src="/icons/icon-96x96.webp" alt="Badge" width="50" height="50">
+                        <div class="icon-info">96x96<br>Badge</div>
+                    </div>
+                    <div class="icon-item">
+                        <img src="/icons/icon-192x192.webp" alt="Notification" width="60" height="60">
+                        <div class="icon-info">192x192<br>Notification</div>
+                    </div>
+                </div>
+                <div class="compatibility-list">
+                    <h3>Types de Notifications</h3>
+                    <ul>
+                        <li>Notifications push</li>
+                        <li>Badges de notification</li>
+                        <li>Actions de notification</li>
+                        <li>Notifications locales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="status">
+            <h3>🎉 Résultat</h3>
+            <p>Si toutes les icônes s'affichent correctement ci-dessus, votre application PWA est parfaitement compatible avec tous les appareils !</p>
+            <p style="margin-top: 15px; font-weight: 600;">📱 Testez maintenant l'installation sur vos appareils :</p>
+            <ul style="margin-top: 10px; text-align: left; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <li><strong>iPhone/iPad :</strong> Safari → Partager → Sur l'écran d'accueil</li>
+                <li><strong>Android :</strong> Chrome → Menu → Ajouter à l'écran d'accueil</li>
+                <li><strong>Windows :</strong> Edge/Chrome → Icône d'installation</li>
+                <li><strong>macOS :</strong> Safari → Partager → Ajouter à l'écran d'accueil</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Détection automatique de l'appareil
+        function detectDevice() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            const platform = navigator.platform.toLowerCase();
+
+            let deviceType = "Desktop";
+            let deviceInfo = "";
+
+            if (/iphone|ipad|ipod/.test(userAgent)) {
+                deviceType = "iOS";
+                if (/iphone/.test(userAgent)) {
+                    deviceInfo = "iPhone détecté";
+                } else if (/ipad/.test(userAgent)) {
+                    deviceInfo = "iPad détecté";
+                }
+            } else if (/android/.test(userAgent)) {
+                deviceType = "Android";
+                deviceInfo = "Appareil Android détecté";
+            } else if (/windows/.test(userAgent)) {
+                deviceType = "Windows";
+                deviceInfo = "Windows détecté";
+            } else if (/macintosh|mac os x/.test(userAgent)) {
+                deviceType = "macOS";
+                deviceInfo = "macOS détecté";
+            } else if (/linux/.test(userAgent)) {
+                deviceType = "Linux";
+                deviceInfo = "Linux détecté";
+            }
+
+            // Afficher l'information de détection
+            const detectionDiv = document.createElement('div');
+            detectionDiv.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                font-size: 14px;
+                z-index: 1000;
+                max-width: 200px;
+            `;
+            detectionDiv.innerHTML = `
+                <strong>🔍 Détection :</strong><br>
+                ${deviceType}<br>
+                ${deviceInfo}
+            `;
+            document.body.appendChild(detectionDiv);
+        }
+
+        // Détecter l'appareil au chargement
+        window.addEventListener('load', detectDevice);
+    </script>
+</body>
+
+</html>

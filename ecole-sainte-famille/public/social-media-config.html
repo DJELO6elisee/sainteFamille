@@ -1,0 +1,128 @@
+<!-- Configuration pour les réseaux sociaux -->
+
+<!-- Facebook Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'YOUR_FACEBOOK_PIXEL_ID');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=YOUR_FACEBOOK_PIXEL_ID&ev=PageView&noscript=1"
+/></noscript>
+
+<!-- LinkedIn Insight Tag -->
+<script type="text/javascript">
+_linkedin_partner_id = "YOUR_LINKEDIN_PARTNER_ID";
+window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+</script><script type="text/javascript">
+(function(l) {
+if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+window.lintrk.q=[]}
+var s = document.getElementsByTagName("script")[0];
+var b = document.createElement("script");
+b.type = "text/javascript";b.async = true;
+b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+s.parentNode.insertBefore(b, s);})(window.lintrk);
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=YOUR_LINKEDIN_PARTNER_ID&fmt=gif" />
+</noscript>
+
+<!-- Twitter Pixel -->
+<script>
+!function(e,t,n,s,u,a){e.twq||(s=e.twq=function(){s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+},s.version='1.1',s.queue=[],u=t.createElement(n),u.async=!0,u.src='https://static.ads-twitter.com/uwt.js',
+a=t.getElementsByTagName(n)[0],a.parentNode.insertBefore(u,a))}(window,document,'script');
+twq('config','YOUR_TWITTER_PIXEL_ID');
+</script>
+
+<!-- Pinterest Tag -->
+<script>
+!function(e){if(!window.pintrk){window.pintrk = function () {
+window.pintrk.queue.push(Array.prototype.slice.call(arguments))};var
+  n=window.pintrk;n.queue=[],n.version="3.0";var
+  t=document.createElement("script");t.async=!0,t.src=e;var
+  r=document.getElementsByTagName("script")[0];
+  r.parentNode.insertBefore(t,r)}}("https://s.pinimg.com/ct/core.js");
+pintrk('load', 'YOUR_PINTEREST_PIXEL_ID');
+pintrk('page');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none;" alt="" src="https://ct.pinterest.com/v3/?tid=YOUR_PINTEREST_PIXEL_ID&noscript=1" />
+</noscript>
+
+<!-- WhatsApp Business API -->
+<script>
+  // Configuration pour WhatsApp Business
+  window.whatsappConfig = {
+    phoneNumber: '+2252722516904',
+    message: 'Bonjour, je souhaite des informations sur GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE',
+    businessHours: {
+      monday: { open: '07:00', close: '18:00' },
+      tuesday: { open: '07:00', close: '18:00' },
+      wednesday: { open: '07:00', close: '18:00' },
+      thursday: { open: '07:00', close: '18:00' },
+      friday: { open: '07:00', close: '18:00' },
+      saturday: { open: '08:00', close: '12:00' },
+      sunday: { open: null, close: null }
+    }
+  };
+</script>
+
+<!-- Configuration pour le partage social -->
+<script>
+  // Fonction pour partager sur les réseaux sociaux
+  function shareOnSocial(platform, url, title, description) {
+    const encodedUrl = encodeURIComponent(url);
+    const encodedTitle = encodeURIComponent(title);
+    const encodedDescription = encodeURIComponent(description);
+    
+    let shareUrl = '';
+    
+    switch(platform) {
+      case 'facebook':
+        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`;
+        break;
+      case 'twitter':
+        shareUrl = `https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}&via=LaPetiteAcademie`;
+        break;
+      case 'linkedin':
+        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`;
+        break;
+      case 'whatsapp':
+        shareUrl = `https://wa.me/2252722516904?text=${encodedTitle}%20${encodedUrl}`;
+        break;
+      case 'email':
+        shareUrl = `mailto:?subject=${encodedTitle}&body=${encodedDescription}%20${encodedUrl}`;
+        break;
+    }
+    
+    if (shareUrl) {
+      window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+  }
+  
+  // Ajouter les boutons de partage aux pages
+  document.addEventListener('DOMContentLoaded', function() {
+    const shareButtons = document.querySelectorAll('[data-share]');
+    shareButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const platform = this.getAttribute('data-share');
+        const url = window.location.href;
+        const title = document.title;
+        const description = document.querySelector('meta[name="description"]').getAttribute('content');
+        
+        shareOnSocial(platform, url, title, description);
+      });
+    });
+  });
+</script>

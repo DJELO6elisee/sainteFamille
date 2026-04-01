@@ -1,0 +1,139 @@
+{
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE - GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE",
+    "alternateName": "GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE",
+    "description": "Crèche et garderie privée à Abidjan Cocody Riviera 3. Éducation de qualité pour enfants de 3 mois à 6 ans. Pré-inscription 2025-2026, école maternelle bilingue, activités éducatives.",
+    "url": "https://saintefamilleexcellence.ci",
+    "telephone": ["+2252722516904", "+2250708022424"],
+    "email": "infos@lapetiteacademie.ci",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cocody Riviera 3",
+        "addressLocality": "Abidjan",
+        "addressRegion": "Lagunes",
+        "addressCountry": "CI",
+        "postalCode": "225"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 5.3550939,
+        "longitude": -3.9521382
+    },
+    "openingHours": "Mo-Fr 07:00-18:00",
+    "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+    }],
+    "priceRange": "$$",
+    "paymentAccepted": ["Cash", "Check", "Bank Transfer"],
+    "currenciesAccepted": "XOF",
+    "areaServed": {
+        "@type": "City",
+        "name": "Abidjan"
+    },
+    "serviceArea": {
+        "@type": "City",
+        "name": "Abidjan"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services éducatifs",
+        "itemListElement": [{
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Crèche (3 mois - 3 ans)",
+                    "description": "Accueil et éveil pour les tout-petits",
+                    "price": "100000",
+                    "priceCurrency": "XOF",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "100000",
+                        "priceCurrency": "XOF",
+                        "unitText": "par mois"
+                    }
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Garderie (3-6 ans)",
+                    "description": "Préparation à l'école maternelle",
+                    "price": "100000",
+                    "priceCurrency": "XOF",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "100000",
+                        "priceCurrency": "XOF",
+                        "unitText": "par mois"
+                    }
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "École maternelle",
+                    "description": "Programme préscolaire complet",
+                    "price": "1150000",
+                    "priceCurrency": "XOF",
+                    "priceSpecification": {
+                        "@type": "UnitPriceSpecification",
+                        "price": "1150000",
+                        "priceCurrency": "XOF",
+                        "unitText": "par année"
+                    }
+                }
+            }
+        ]
+    },
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "85",
+        "bestRating": "5",
+        "worstRating": "1"
+    },
+    "review": [{
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Marie K."
+            },
+            "reviewBody": "Excellente crèche avec un personnel très professionnel. Mon enfant s'épanouit parfaitement."
+        },
+        {
+            "@type": "Review",
+            "reviewRating": {
+                "@type": "Rating",
+                "ratingValue": "5",
+                "bestRating": "5"
+            },
+            "author": {
+                "@type": "Person",
+                "name": "Pierre D."
+            },
+            "reviewBody": "Approche pédagogique innovante et résultats visibles. Très satisfait de l'éducation dispensée."
+        }
+    ],
+    "sameAs": [
+        "https://facebook.com/lapetiteacademie.ci"
+    ],
+    "image": [
+        "http://localhost:3000/img/pages/logologo.webp",
+        "http://localhost:3000/img/pages/1860530846.png"
+    ],
+    "logo": "http://localhost:3000/img/pages/logologo.webp",
+    "foundingDate": "2020",
+    "numberOfEmployees": "15-20",
+    "keywords": "crèche Abidjan, garderie Abidjan, école maternelle Abidjan, pré-inscription 2025, halte garderie, approche pédagogique, Cocody Riviera 3, crèche privée, garderie privée, éducation petite enfance, école maternelle bilingue, robotique enfants, natation enfants, anglais maternelle, activités éducatives, développement cognitif enfant"
+}

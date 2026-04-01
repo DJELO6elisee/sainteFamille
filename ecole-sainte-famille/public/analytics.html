@@ -1,0 +1,26 @@
+<!-- Google Analytics - À ajouter dans le head de index.html -->
+<!-- Remplacer GA_MEASUREMENT_ID par votre ID de mesure Google Analytics -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'GA_MEASUREMENT_ID', {
+        page_title: 'GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE - GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE',
+        page_location: 'https://saintefamilleexcellence.ci'
+    });
+</script>
+
+<!-- Instructions d'installation :
+1. Créez un compte Google Analytics
+2. Créez une propriété pour votre site web
+3. Remplacez GA_MEASUREMENT_ID par votre ID de mesure (format: G-XXXXXXXXXX)
+4. Ajoutez ce code dans la section <head> de votre index.html
+5. Testez avec Google Analytics Real-Time pour vérifier que les données arrivent
+-->

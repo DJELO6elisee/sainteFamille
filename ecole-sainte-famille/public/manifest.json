@@ -1,0 +1,154 @@
+{
+    "short_name": "TRAYE BERNARD",
+    "name": "GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE",
+    "description": "GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE - Compatible Safari - Mise à jour du 03/12/2025",
+    "icons": [
+        {
+            "src": "/icons/icon-16x16.webp",
+            "type": "image/webp",
+            "sizes": "16x16",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-32x32.webp",
+            "type": "image/webp",
+            "sizes": "32x32",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-48x48.webp",
+            "type": "image/webp",
+            "sizes": "48x48",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-72x72.webp",
+            "type": "image/webp",
+            "sizes": "72x72",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-96x96.webp",
+            "type": "image/webp",
+            "sizes": "96x96",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-128x128.webp",
+            "type": "image/webp",
+            "sizes": "128x128",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-144x144.webp",
+            "type": "image/webp",
+            "sizes": "144x144",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-152x152.webp",
+            "type": "image/webp",
+            "sizes": "152x152",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-180x180.webp",
+            "type": "image/webp",
+            "sizes": "180x180",
+            "purpose": "any"
+        },
+        {
+            "src": "/icons/icon-192x192.webp",
+            "type": "image/webp",
+            "sizes": "192x192",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icon-256x256.webp",
+            "type": "image/webp",
+            "sizes": "256x256",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icon-384x384.webp",
+            "type": "image/webp",
+            "sizes": "384x384",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "/icons/icon-512x512.webp",
+            "type": "image/webp",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "display": "standalone",
+    "theme_color": "#1780c2",
+    "background_color": "#ffffff",
+    "orientation": "portrait",
+    "scope": "/",
+    "lang": "fr",
+    "dir": "ltr",
+    "categories": [
+        "education",
+        "lifestyle",
+        "family"
+    ],
+    "screenshots": [
+        {
+            "src": "img/sainte/logo.jpg",
+            "sizes": "512x512",
+            "type": "image/jpeg",
+            "form_factor": "wide",
+            "label": "Accueil du GROUPE SCOLAIRE SAINTE FAMILLE L'EXECELLENCE"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Jeux Éducatifs",
+            "short_name": "Jeux",
+            "description": "Découvrir nos jeux éducatifs",
+            "url": "/jeux-educatifs",
+            "icons": [
+                {
+                    "src": "/icons/icon-96x96.webp",
+                    "sizes": "96x96",
+                    "type": "image/webp"
+                }
+            ]
+        },
+        {
+            "name": "Vie Académique",
+            "short_name": "Vie",
+            "description": "Programme éducatif complet",
+            "url": "/vie-academique",
+            "icons": [
+                {
+                    "src": "/icons/icon-96x96.webp",
+                    "sizes": "96x96",
+                    "type": "image/webp"
+                }
+            ]
+        },
+        {
+            "name": "Activités Extrascolaires",
+            "short_name": "Extras",
+            "description": "Activités créatives et sportives",
+            "url": "/activites-extrascolaires",
+            "icons": [
+                {
+                    "src": "/icons/icon-96x96.webp",
+                    "sizes": "96x96",
+                    "type": "image/webp"
+                }
+            ]
+        }
+    ],
+    "prefer_related_applications": false,
+    "related_applications": [],
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "version": "1.4.0.20251203"
+}

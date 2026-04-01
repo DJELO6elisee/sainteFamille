@@ -1,0 +1,31 @@
+# ============================================
+# 🌐 CORS pour /api/ (preflight OPTIONS + réponses)
+# À insérer dans le .htaccess du serveur (saintefamilleexcellence.ci),
+# juste après "# CONFIGURATION ROUTAGE REACT + API" et AVANT les RewriteRule.
+# Nécessite mod_headers et mod_setenvif.
+#
+# IMPORTANT: Ces règles aident quand l'API est sur le MÊME domaine
+# (saintefamilleexcellence.ci/api/). Si votre frontend appelle
+# saintefamilleexcellence.ci pour l'API, la correction CORS
+# doit être faite sur le serveur saintefamilleexcellence.ci (voir CORS-SETUP-API.md).
+# ============================================
+
+# Origines autorisées (front + API croisés)
+SetEnvIf Origin "^https?://(www\.)?saintefamilleexcellence\.ci$" CORS_ALLOW=1
+SetEnvIf Origin "^https?://(www\.)?saintefamilleexcellence\.ci$" CORS_ALLOW=1
+SetEnvIf Origin "^http://localhost:3000$" CORS_ALLOW=1
+SetEnvIf Origin "^http://127\.0\.0\.1:3000$" CORS_ALLOW=1
+
+# En-têtes CORS pour les réponses (y compris preflight)
+<IfModule mod_headers.c>
+    Header always set Access-Control-Allow-Origin "%{HTTP_Origin}i" env=CORS_ALLOW
+    Header always set Access-Control-Allow-Credentials "true" env=CORS_ALLOW
+    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, PATCH, OPTIONS" env=CORS_ALLOW
+    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Requested-With, Accept, Origin, Access-Control-Request-Method, Access-Control-Request-Headers" env=CORS_ALLOW
+    Header always set Access-Control-Max-Age "86400" env=CORS_ALLOW
+</IfModule>
+
+# Répondre au preflight OPTIONS /api/ par 204 (Apache 2.4+)
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteCond %{REQUEST_URI} ^/api/
+RewriteRule ^ - [R=204,L]
